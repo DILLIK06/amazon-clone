@@ -26,7 +26,7 @@ function Home() {
                         price={5} rating={3} />
                 </div>
                 <div className="home_row">
-                    <Product title="The Lean start-up" image='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg'
+                    <Product title="The Lean start-up" image='https://www.lg.com/in/images/monitors/MD05949138/gallery/medium01.jpg'
                         price={5} rating={3} />
                 </div>
 

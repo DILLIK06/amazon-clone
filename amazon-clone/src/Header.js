@@ -17,10 +17,12 @@ function Header() {
                 <SearchIcon className="header_searchIcon" />
             </div>
             <div className="header_nav">
-                <div className="header_option">
-                    <span className="header_optionLineone">Hello DilliK</span>
-                    <span className="header_optionLineTwe">Sign In</span>
-                </div>
+                <Link to="/login">
+                    <div className="header_option">
+                        <span className="header_optionLineone">Hello DilliK</span>
+                        <span className="header_optionLineTwe">Sign In</span>
+                    </div>
+                </Link>
                 <div className="header_option">
                     <span className="header_optionLineone">Returns</span>
                     <span className="header_optionLineTwe">& Orders</span>
@@ -32,7 +34,7 @@ function Header() {
                 <Link to="/checkout">
                     <div className="header_optionBasket">
                         <ShoppingBasketIcon />
-                        <span className="header_optionLineTwo header_basketCount">{basket?.length}</span>
+                        <span className="header_optionLineTwo header_basketCount">{basket.length}</span>
                     </div>
                 </Link>
             </div>
