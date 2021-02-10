@@ -8,8 +8,13 @@ import Payment from './payment/Payment';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe('pk_test_51Ho4xMKuJ0naCzIt0jVIwCBG5xtoHeJO5vHzMzvYBOYWLFQutvVcM0PyIVBjSCixGcBpNJsiUeCpLy92VXvMffl700Bsz9WuVp');
 
 function App() {
+  // stripe API key: pk_test_51Ho4xMKuJ0naCzIt0jVIwCBG5xtoHeJO5vHzMzvYBOYWLFQutvVcM0PyIVBjSCixGcBpNJsiUeCpLy92VXvMffl700Bsz9WuVp
   const [{ basket, user }, dispatch] = useStateValue();
 
   useEffect(() => {
@@ -41,7 +46,9 @@ function App() {
           </Route>
           <Route path="/payment">
             <Header />
+            <Elements stripe={promise}>
             <Payment />
+            </Elements>
           </Route>
           <Route path="/">
             <Header />
